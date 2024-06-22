@@ -82,7 +82,7 @@ header .container{
 
 .links a:hover{
     color:var(--hoverColor2);
-    transform: scale(1.3);
+    transform: scale(1.05);
 }
 .btn{
     display: inline-block;
@@ -98,3 +98,14 @@ header .container{
     background-color: var(--hoverColor);
     transform: scale(1) !important;
 }
+
+.showcase-area .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
