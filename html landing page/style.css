@@ -62,6 +62,12 @@ a{
     padding: 0 3 rem;
     z-index: 10;
 }
+
+header{
+    position: relative;
+    z-index: 70;
+}
+
 header .container{
     display: flex;
     justify-content: space-between;
@@ -81,9 +87,7 @@ header .container{
     line-height: 1.2;
     font-weight: 700;
 }
-.links{
-    display:none;
-}
+
 
 .links ul{
     display: flex;
@@ -120,6 +124,56 @@ header .container{
     background-color: var(--hoverColor);
     transform: scale(1) !important;
 }
+.hamburger-menu{
+    position: relative;
+    z-index: 99;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger-menu .bar{
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: var(--darkTwo);
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.bar::before,.bar::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--darkTwo);
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.bar::before{
+    transform: translateY(-8px);
+}
+
+.bar::after{
+    transform: translateY(8px);
+}
+
+.big-wrapper.active .hamburger-menu .bar{
+    background-color: transparent;
+}
+
+.big-wrapper.active .bar::before{
+    transform: translateY(0) rotate(-45deg);
+}
+
+.big-wrapper.active .bar::after{
+    transform: translateY(0) rotate(45deg);
+}
 
 .showcase-area .container{
     display: grid;
@@ -127,6 +181,8 @@ header .container{
     align-items: center;
     justify-content: center;
 }
+
+
 
 .big-title{
     font-size: 1.4rem;
@@ -221,6 +277,39 @@ header .container{
     .right{
         width: 100%;
         transform: none;
+    }
+
+    .hamburger-menu{
+        display: flex;
+    }
+
+    .links{
+        position: fixed;
+        top: 0;
+        right: 0;
+        max-width: 450px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--mainColor);
+        z-index: 95;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .links ul{
+        flex-direction: column;
+    }
+
+    .links a{
+        color: #fff;
+        margin-left: 0;
+        padding: 2rem 0;
+    }
+
+
+    .links .btn{
+        background: none;
     }
     
 }
