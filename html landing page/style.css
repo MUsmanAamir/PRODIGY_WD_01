@@ -81,6 +81,9 @@ header .container{
     line-height: 1.2;
     font-weight: 700;
 }
+.links{
+    display:none;
+}
 
 .links ul{
     display: flex;
@@ -99,6 +102,10 @@ header .container{
     color:var(--hoverColor2);
     transform: scale(1.05);
 }
+
+
+
+
 .btn{
     display: inline-block;
     padding: .9rem 1.9rem;
@@ -128,7 +135,7 @@ header .container{
     line-height: 1.4;
 }
 #text{
-    color:#ccc;
+    color:var(--LightTwo);
     font-size: 1.1rem;
     margin: 1.9rem 0 2.5rem;
     max-width:400px;
@@ -202,4 +209,18 @@ header .container{
    {
     clip-path: circle(150% at 0 0);
    }
+}
+
+
+@media screen and (max-width:870px) 
+{
+    .showcase-area .container{
+        grid-template-columns: 1fr;
+    }
+
+    .right{
+        width: 100%;
+        transform: none;
+    }
+    
 }

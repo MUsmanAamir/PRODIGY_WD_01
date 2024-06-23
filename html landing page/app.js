@@ -1,6 +1,14 @@
-var toggle_btn = document.querySelector(".toggle-btn");
-var big_wrapper = document.querySelector(".big-wrapper");
+var toggle_btn;
+var big_wrapper;
+
+function declare(){
+    toggle_btn = document.querySelector(".toggle-btn");
+    big_wrapper = document.querySelector(".big-wrapper");
+
+}
 const main = document.querySelector("main");
+
+declare();
 
 let dark = false;
 
@@ -22,6 +30,20 @@ function toggleAnimation()
     }
     clone.classList.add("copy");
     main.appendChild(clone);
+
+    clone.addEventListener("animationend",() => 
+    {
+        big_wrapper.remove();
+        clone.classList.remove("copy");
+
+        //reset variables
+        declare();
+        events();
+    });
 }
 
-toggle_btn.addEventListener("click",toggleAnimation);
+function events(){
+    toggle_btn.addEventListener("click",toggleAnimation);
+}
+
+events();
