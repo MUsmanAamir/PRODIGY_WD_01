@@ -73,6 +73,10 @@ header .container{
     justify-content: space-between;
     align-items: center;
 }
+.overlay{
+    display: none;
+}
+
 .logo{
     display: flex;
     align-items: center;
@@ -188,7 +192,7 @@ header .container{
     font-size: 1.4rem;
     color:var(--darkOne);
     text-transform: capitalize;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 #text{
     color:var(--LightTwo);
@@ -270,14 +274,7 @@ header .container{
 
 @media screen and (max-width:870px) 
 {
-    .showcase-area .container{
-        grid-template-columns: 1fr;
-    }
-
-    .right{
-        width: 100%;
-        transform: none;
-    }
+    
 
     .hamburger-menu{
         display: flex;
@@ -295,6 +292,8 @@ header .container{
         display: flex;
         align-items: center;
         justify-content: center;
+        transform: translateX(100%);
+        transition: 0.5s;
     }
 
     .links ul{
@@ -311,5 +310,80 @@ header .container{
     .links .btn{
         background: none;
     }
+
+    .overlay{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.7);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.5s;
+    }
+
+    .big-wrapper.active .links{
+        transform: translateX(0);
+        box-shadow: 0 0 50px 2px rgba(0,0,0,0.4);
+    }
+
+    .big-wrapper.active .overlay{
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    .showcase-area{
+        padding: 2.5rem 0;
+        max-width: 700px;
+        margin: 0 auto;
+    }
     
+    .showcase-area .container{
+        grid-template-columns: 1fr;
+        justify-content: center;
+        grid-gap: 2rem;
+    }
+
+    .big-title{
+        font-size: 1.1rem;
+    }
+
+    #text{
+        font-size: 0.95rem;
+        margin: 1.4rem 0 1.5rem;
+    }
+
+    .right{
+        width: 100%;
+        transform: none;
+    }
+
+    .logo h3{
+        font-size: 1.25rem;
+    }
+
+    .shape{
+        bottom: -180px;
+        left: -150px;
+    }
+}
+
+@media screen and (max-width:470px)  {
+    .container{
+        padding: 0 1.5rem;
+    }
+
+    .big-title{
+        font-size: 0.9rem;
+    }
+
+    #text{
+        margin: 1.1rem 0 1.5rem;
+    }
+
+    .showcase-area.btn{
+        font-size: 0.8rem;
+    }
 }
