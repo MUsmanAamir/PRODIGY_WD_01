@@ -1,1 +1,1 @@
-# HTML/CSS/JS Landing Page
+# HTML/CSS/JavaScript Landing Page
